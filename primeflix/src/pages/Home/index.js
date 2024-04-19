@@ -116,9 +116,9 @@ function Home() { //define o componente funcional Home.
                     <form onSubmit={handleSubmit}>
                         {/* Campo de entrada para pesquisa */}
                         <input 
-                        type="search" 
-                        name="search" 
-                        id="search" 
+                        type='search' 
+                        name='search' 
+                        id='search' 
                         placeholder='Pesquise pelo seu filme favorito...'
                         onChange= {handleChange}
                         value={search || ''} 
