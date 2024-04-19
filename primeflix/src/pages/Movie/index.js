@@ -35,5 +35,15 @@ function Movie() {
                 navigate('/', {replace: true});
             }
         }
-    })
+
+        loadMovie(); //Chama para carregar os detalhes do filme
+    }, [navigate, id]); //Dependencias do useEffect
+
+    //Converte minutos em horas e minutos
+    function conversion(mins) {
+        let hrs = Math.floor(mins/60);
+        let min = mind % 60;
+
+    } 
+    
  }
