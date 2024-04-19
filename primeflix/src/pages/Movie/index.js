@@ -44,6 +44,47 @@ function Movie() {
         let hrs = Math.floor(mins/60);
         let min = mind % 60;
 
+        hrs = hrs < 10 ? '0' + hrs : hrs;
+        min = min < 10 ? '0' + min : min;
+
+        return `${hrs}h ${min}m`;
     } 
+
+    //Formatar a data
+    function formatDate(date) {
+        return date.split('-').reverse().join('/');
+    }
+
+    //Salvar o filme na lista de favoritos
+    function saveMovie() {
+        //Obtém a lista de filmes salva no localStorage ou cria uma nova lista vazia
+        const myList = localStorage.getItem('@primeflix');
+        let savedMovies = JSON.parse(myList) || [];
+
+        //Verifica se o filme já está na lista
+        const hasMovie = savedMovie.some((savedMovies) => savedMovies.id === movie.id);
+
+        //Então, exibe uma mensagem de aviso
+        if (hasMovie) {
+            toast.warning('Filme já está salvo em sua lista');
+            return
+        }
+
+        //Adiciona o filme a lista 
+        savedMovies.push(movie);
+        localStorage.setItem('@primeflix', JSON.stringify(savedMovies));
+
+        //Exibe uma mensagem de sucesso ao salvar o filme
+        toast.success('Filme salvo com sucesso');
+    }
+
+    if(loading) {
+        return (
+            <Loading text='Carregando detalhes...'/>
+        );
+    }
+
+    //Renderiza os detlahes do filme
+    return
     
  }
