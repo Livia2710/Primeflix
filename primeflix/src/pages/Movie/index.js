@@ -85,6 +85,12 @@ function Movie() {
     }
 
     //Renderiza os detlahes do filme
-    return
+    return (
+        <div className={styles.container}>
+            <div className={styles.title} style={{backgroundImage: `linear-gradient(to rigth, rgba(var)--primeflix), 0.9) 100%, rgba(var(--primeflixDark), 0) 100%)`}}>
+
+            </div>
+        </div>
+    )
     
  }
